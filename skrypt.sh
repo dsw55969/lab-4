@@ -1,8 +1,8 @@
-if [[ "$1" == "--date" ]]; then
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
   date
 fi
 
-elif [[ "$1" == "--logs" ]]; then
+elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
   count=${2:-100}
   for ((i=1; i<=count; i++)); do
     filename="log${i}.txt"
@@ -12,7 +12,7 @@ elif [[ "$1" == "--logs" ]]; then
   done
 fi
 
-elif [[ "$1" == "--help" ]]; then
+elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
   echo "--date       pokazuje datę"
   echo "--logs N     tworzy N plików"
   echo "--help       pokazuje pomoc"
