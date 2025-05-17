@@ -17,3 +17,13 @@ elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
   echo "--logs N     tworzy N plików"
   echo "--help       pokazuje pomoc"
 fi
+
+elif [[ "$1" == "--init" ]]; then
+  repo_url=$(git config --get remote.origin.url)
+  current_dir=$(pwd)
+  folder_name="copy-1"
+  git clone "$repo_url" "$current_dir/$folder_name"
+  
+  export PATH="$current_dir/$folder_name:$PATH"
+echo "Repozytorium sklonowane do: $folder_name"
+echo "Dodano do PATH (tymczasowo): $current_dir/$folder_name"
