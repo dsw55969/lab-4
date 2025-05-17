@@ -1,6 +1,5 @@
 if [[ "$1" == "--date" || "$1" == "-d" ]]; then
   date
-fi
 
 elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
   count=${2:-100}
@@ -10,13 +9,11 @@ elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     echo "Skrypt: $0" >> $filename
     echo "Data: $(date)" >> $filename
   done
-fi
 
 elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
   echo "--date       pokazuje datę"
   echo "--logs N     tworzy N plików"
   echo "--help       pokazuje pomoc"
-fi
 
 elif [[ "$1" == "--init" ]]; then
   repo_url=$(git config --get remote.origin.url)
@@ -27,3 +24,7 @@ elif [[ "$1" == "--init" ]]; then
   export PATH="$current_dir/$folder_name:$PATH"
 echo "Repozytorium sklonowane do: $folder_name"
 echo "Dodano do PATH (tymczasowo): $current_dir/$folder_name"
+
+else 
+	echo "Unknown"
+fi
