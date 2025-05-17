@@ -11,3 +11,9 @@ elif [[ "$1" == "--logs" ]]; then
     echo "Data: $(date)" >> $filename
   done
 fi
+
+elif [[ "$1" == "--help" ]]; then
+  echo "--date       pokazuje datę"
+  echo "--logs N     tworzy N plików"
+  echo "--help       pokazuje pomoc"
+fi
